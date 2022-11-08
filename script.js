@@ -3,6 +3,22 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((item) => {
   item.onclick = () => {
+    const mappedList = {
+      'q': "Quartz",
+      'w': "Well Done",
+      'e': "Eternal",
+      'r': "Reform"
+    };
+
+    const message = mappedList[item.id];
+    if (message) {
+      display.innerText = message;
+      alert(message)
+      console.log(message)
+
+      return;
+    }
+
     if (item.id == "clear") {
       display.innerText = "";
     } else if (item.id == "backspace") {
